@@ -1,7 +1,7 @@
 
 
 url: 'https://api.staging.catalog.crpt.ru/v3/internal-product'
-apikey: 'dfy18x14oq3kxubd'
+apikey: '_____'
 gtins: '4640103830058'
 
 output_folder: 'D:/CRPT/2021.05_май/тестирование/'
