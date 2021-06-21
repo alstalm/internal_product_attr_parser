@@ -1,0 +1,82 @@
+import requests
+import yaml
+import json
+import numpy as np
+
+def NK_status_checker(url, data):
+    url = url
+    headers= {}
+    data = data
+
+    r = requests.request(method="GET",
+                         url=url,
+                         headers=headers,
+                         params=data
+                         )
+    if r.status_code != 200:
+        print('Status code: ' + str(r.status_code))
+        print('Login response: ' + str(r.json()))
+        exit(1)
+
+    return (str(r.status_code))
+
+def internal_product_attr_parser(url, apikey, gtin, attribute, output='value'):
+    url = url
+    headers= {}
+
+    data = {'apikey':apikey, 'gtins':gtin}
+
+    r = requests.request(method="GET",
+                         url=url,
+                         headers=headers,
+                         params=data
+                         )
+
+    response = json.loads(r.text)
+    attributes = response['result'][0]['good_attrs']
+
+    for i in range(len(attributes)):
+        attrId = response['result'][0]['good_attrs'][i]['attr_id']
+
+        attr_value, attr_value_type = np.NaN, np.NaN
+
+        if int(attrId) == attribute:
+            attrId = attrId
+            attr_value = response['result'][0]['good_attrs'][i]['attr_value']
+            attr_value_type = response['result'][0]['good_attrs'][i]['attr_value_type']
+            break
+
+    if output == 'value':
+        returned_value = attr_value
+    elif output == 'type':
+        returned_value = attr_value_type
+    else:
+        returned_value = 'не определено: тип или значение'
+
+    return returned_value
+
+
+
+
+if __name__ == '__main__':
+
+    '''  ЗАДАИМ ПАРАМЕТРЫ '''
+    with open('params.yaml', 'r', encoding='UTF-8') as f:
+        params = yaml.safe_load(f)
+
+
+    url = 'https://api.staging.catalog.crpt.ru/v3/internal-product'
+    apikey = params['apikey']
+    gtin = params['gtins']
+    attribute = 2481
+    payload = {'apikey': apikey, 'gtins': gtin}
+
+    ''' ПРОВЕРИМ СТАТУС '''
+    x = NK_status_checker(url=url, data=payload)
+    print('error code =', x)
+
+    ''' ЗАПРОСИМ JSON'''
+    attrId, attr_value, attr_value_type = internal_product_attr_parser(url=url, apikey=apikey, gtin=gtin, attribute=attribute, output='value')
+    print('attrId =', attrId)
+    print('attr_value =', attr_value)
+    print('attr_value_type =', attr_value_type)

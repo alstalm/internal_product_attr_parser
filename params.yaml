@@ -1,0 +1,8 @@
+
+
+url: 'https://api.staging.catalog.crpt.ru/v3/internal-product'
+apikey: 'dfy18x14oq3kxubd'
+gtins: '4640103830058'
+
+output_folder: 'D:/CRPT/2021.05_май/тестирование/'
+output_file: 'test_output_03.06.2021.xlsx'
