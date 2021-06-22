@@ -22,26 +22,31 @@ gtins = params['gtins']
 payload = {'apikey':apikey, 'gtins':gtins}
 
 
-x = NK_status_checker(url=url, data=payload)
+x = NK_status_checker(url=url, apikey=apikey, gtin=4640103830058 )
 if int(x) == 200:
-    print('main 26: status code =', x)
+    print('main 26: предварительная проверка сервера. status code =', x)
 else:
-    print('main :  status code =', x)
+    print('main : предварительная проверка сервера. status code =', x)
 
 
 
 # Press the green button in the gutter to run the script.
 
-def cal_multi_col(row):
+def get_attr_value(row):
     out = internal_product_attr_parser(gtin=row['GTIN'], attribute=row['Attributes ID'], url=url, apikey=apikey, output='value')
-    return [out]
+    return out
+
+def get_attr_type(row):
+    out = internal_product_attr_parser(gtin=row['GTIN'], attribute=row['Attributes ID'], url=url, apikey=apikey, output='type')
+    return out
 
 
 if __name__ == '__main__':
     df = pd.read_excel('D:/CRPT/2021.06_июнь/СВЕРКА РАСХОЖДЕНИЙ/тестирование парсера internal-product/объединенный.xlsx')
     print(df.to_string())
 
-    df['NK_value'] = df.apply(cal_multi_col, axis=1, result_type='expand')
+    df['NK_value'] = df.apply(get_attr_value, axis=1, result_type='expand')
+    df['NK_type'] = df.apply(get_attr_type, axis=1, result_type='expand')
     print(df.to_string())
 
 

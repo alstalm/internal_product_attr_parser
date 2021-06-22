@@ -1,8 +1,8 @@
 
 
-url: 'https://api.staging.catalog.crpt.ru/v3/internal-product'
-apikey: 'dfy18x14oq3kxubd'
-gtins: '4640103830058'
+url: 'https://xn--80aqu.xn----7sbabas4ajkhfocclk9d3cvfsa.xn--p1ai/v3/internal-product' #'https://api.staging.catalog.crpt.ru/v3/internal-product'
+apikey: 'pvq8e707s7agrfi2' #'dfy18x14oq3kxubd'
+gtins: '4640103830058' #'4607012430281'
 
 output_folder: 'D:/CRPT/2021.05_май/тестирование/'
 output_file: 'test_output_03.06.2021.xlsx'
