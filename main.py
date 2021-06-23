@@ -4,14 +4,12 @@
 # pip install openpyxl
 # pip install PyMySQL
 
-
 import pandas as pd
 pd.options.display.max_colwidth = 150
 import yaml
 from function import  NK_status_checker
 from function import  get_attr_value
 from function import  get_attr_type
-
 
 '''  ЗАДАИМ ПАРАМЕТРЫ '''
 with open ('params.yaml', 'r', encoding='UTF-8') as f:

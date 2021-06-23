@@ -15,9 +15,6 @@ port = params['DB_port']
 password = params['DB_password']
 database = params['DB_database']
 
-
-
-
 def get_attr_value(row):
     out = internal_product_attr_parser(AccountId = row['AccountId'], gtin=row['GTIN'], attribute=row['Attributes ID'], url=url, apikey=apikey, output='value')
     return out
