@@ -1,7 +1,7 @@
 
 API_url: 'https://xn--80aqu.xn----7sbabas4ajkhfocclk9d3cvfsa.xn--p1ai/v3/internal-product' 
 apikey: '______' 
-gtins: '4640103830058' #'4607012430281'
+gtins: '4640103830058' 
 
 DB_host: '______'
 DB_user: '______'
