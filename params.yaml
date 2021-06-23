@@ -1,8 +1,16 @@
 
-
-url: 'https://xn--80aqu.xn----7sbabas4ajkhfocclk9d3cvfsa.xn--p1ai/v3/internal-product' #'https://api.staging.catalog.crpt.ru/v3/internal-product'
+API_url: 'https://xn--80aqu.xn----7sbabas4ajkhfocclk9d3cvfsa.xn--p1ai/v3/internal-product' #'https://api.staging.catalog.crpt.ru/v3/internal-product'
 apikey: 'pvq8e707s7agrfi2' #'dfy18x14oq3kxubd'
 gtins: '4640103830058' #'4607012430281'
+
+DB_host: 'percona01.stable.nk.crpt.tech'
+DB_user: 'user'
+DB_port:  6033
+DB_password: '7tIgfhZG'
+DB_database: 'ntinex'
+
+input_folder: 'D:/CRPT/2021.06_июнь/СВЕРКА РАСХОЖДЕНИЙ/тестирование парсера internal-product/'
+input_file: 'объединенный.xlsx'
 
 output_folder: 'D:/CRPT/2021.05_май/тестирование/'
 output_file: 'test_output_03.06.2021.xlsx'
