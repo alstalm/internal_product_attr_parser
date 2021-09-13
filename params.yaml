@@ -1,16 +1,17 @@
-
 API_url: 'https://xn--80aqu.xn----7sbabas4ajkhfocclk9d3cvfsa.xn--p1ai/v3/internal-product' #'https://api.staging.catalog.crpt.ru/v3/internal-product'
 apikey: 'pvq8e707s7agrfi2' #'dfy18x14oq3kxubd'
-gtins: '4640103830058' #'4607012430281'
+#gtins: '4640103830058' #'4607012430281'
 
-DB_host: 'percona01.stable.nk.crpt.tech'
-DB_user: 'user'
-DB_port:  6033
-DB_password: '7tIgfhZG'
-DB_database: 'ntinex'
+DB_host: '10.73.85.196' #'percona01.stable.nk.crpt.tech'
+DB_user: 'astalmakov' #'user'
+DB_port:  6033 #6033
+DB_password: 'H3uE3OqK1SaE' #'7tIgfhZG'
+DB_database: 'ntinex' #'ntinex'
 
-input_folder: 'D:/CRPT/2021.06_июнь/СВЕРКА РАСХОЖДЕНИЙ/тестирование парсера internal-product/'
-input_file: 'объединенный.xlsx'
+# в исходном файле должны присутствоват столбцы с названием 'AccountId', 'GTIN', 'Attributes ID'
+input_folder: 'D:/CRPT/2021.08_август/расхождения/combined/concatinated/' # 'D:/CRPT/2021.08_август/расхождения/combined/concatinated/' # 'D:/CRPT/2021.06_июнь/СВЕРКА РАСХОЖДЕНИЙ/тестирование парсера internal-product/'
+input_file: 'concatinated8.xlsx'
+sheet_name: 'concatinated5'
 
-output_folder: 'D:/CRPT/2021.05_май/тестирование/'
-output_file: 'test_output_03.06.2021.xlsx'
+output_folder: 'D:/CRPT/2021.08_август/расхождения/combined/concatinated/' # D:/CRPT/2021.06_июнь/СВЕРКА РАСХОЖДЕНИЙ/тестирование парсера internal-product/'
+output_file: 'concatinated80.xlsx'
